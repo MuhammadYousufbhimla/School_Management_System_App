@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loginuicolors/home.dart';
 import 'package:loginuicolors/register.dart';
 import 'main.dart';
 
@@ -98,8 +99,7 @@ class _MyLoginState extends State<MyLogin> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (context) =>
-                                                  MyRegister()));
+                                              builder: (context) => Home()));
                                     },
                                     icon: Icon(
                                       Icons.arrow_forward,
