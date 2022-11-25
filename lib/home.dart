@@ -53,7 +53,7 @@ class _SignUpState extends State<Home> {
               ),
             ),
             leading: CircleAvatar(
-              child: Image.asset('assets/login.png'),
+              backgroundColor: Colors.yellow,
             )),
         body: Container());
   }
