@@ -9,6 +9,8 @@ class MyLogin extends StatefulWidget {
   _MyLoginState createState() => _MyLoginState();
 }
 
+bool _passwordVisible = false;
+
 class _MyLoginState extends State<MyLogin> {
   @override
   Widget build(BuildContext context) {
@@ -54,11 +56,24 @@ class _MyLoginState extends State<MyLogin> {
                           ),
                           TextField(
                             style: TextStyle(),
-                            obscureText: true,
+                            obscureText: !_passwordVisible,
                             decoration: InputDecoration(
                                 fillColor: Colors.grey.shade100,
                                 filled: true,
                                 hintText: "Password",
+                                suffixIcon: IconButton(
+                                  icon: Icon(
+                                    _passwordVisible
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                    color: Theme.of(context).primaryColorDark,
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      _passwordVisible = !_passwordVisible;
+                                    });
+                                  },
+                                ),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 )),

@@ -8,6 +8,8 @@ class MyRegister extends StatefulWidget {
   _MyRegisterState createState() => _MyRegisterState();
 }
 
+bool _passwordVisible = false;
+
 class _MyRegisterState extends State<MyRegister> {
   @override
   Widget build(BuildContext context) {
@@ -92,7 +94,7 @@ class _MyRegisterState extends State<MyRegister> {
                           ),
                           TextField(
                             style: TextStyle(color: Colors.white),
-                            obscureText: true,
+                            obscureText: !_passwordVisible,
                             decoration: InputDecoration(
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -108,6 +110,19 @@ class _MyRegisterState extends State<MyRegister> {
                                 ),
                                 hintText: "Password",
                                 hintStyle: TextStyle(color: Colors.white),
+                                suffixIcon: IconButton(
+                                  icon: Icon(
+                                    _passwordVisible
+                                        ? Icons.visibility
+                                        : Icons.visibility_off,
+                                    color: Theme.of(context).primaryColorDark,
+                                  ),
+                                  onPressed: () {
+                                    setState(() {
+                                      _passwordVisible = !_passwordVisible;
+                                    });
+                                  },
+                                ),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 )),
