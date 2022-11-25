@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:loginuicolors/login.dart';
 
 class MyRegister extends StatefulWidget {
@@ -146,6 +147,8 @@ class _MyRegisterState extends State<MyRegister> {
                                 child: IconButton(
                                     color: Colors.white,
                                     onPressed: () {
+                                      // Get.to(MyLogin());
+
                                       Navigator.pushNamed(context, 'login');
                                     },
                                     icon: Icon(
